@@ -1,0 +1,139 @@
+:root {
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+
+    --dark-gray: hsl(0, 0%, 93%);
+    --line-color: #dadada;
+
+    --font-size: 1.125rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: var(--font-size);
+    height: 100vh;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    color: var(--dark-grayish-blue);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+/********** MAGIC **********/
+
+body {
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-cyan);
+}
+
+.top-image {
+    width: auto;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+}
+
+.bottom-image {
+    width: auto;
+    position: absolute;
+    transform: translateY(50%) translateX(50%);
+}
+
+.card {
+    z-index: 2;
+    width: 350px;
+    text-align: center;
+    background-color: white;
+    margin: 2em;
+    border-radius: 20px;
+}
+
+.identity {
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.identity::before {
+    z-index: -1;
+    content: '';
+    background: url('images/bg-pattern-card.svg');
+    position: absolute;
+    border-radius: 20px 20px 0 0;
+    top: 0;
+    bottom: 50%;
+    right: 0;
+    left: 0;
+}
+
+.identity img {
+    margin-top: 5em;
+    border: 5px solid white;
+    border-radius: 50%;
+    max-width: 96px;
+}
+
+.name-years {
+    margin: 1em 0 0.5em 0;
+    display: flex;
+    gap: 0.5em;
+}
+
+.years {
+    font-size: 1.2rem;
+}
+
+.name, .kilos {
+    font-weight: 700;
+    color: var(--very-dark-desaturated-blue);
+    letter-spacing: 0;
+    font-size: 1.2rem;
+}
+
+.social {
+    margin-top: 1em;
+    border-top: 1px solid var(--line-color);
+    padding: 2em;
+}
+
+.social ul {
+    display: flex;
+}
+
+.social ul > * {
+    flex: 1;
+}
+
+@media (min-width: 800px) {
+
+}
